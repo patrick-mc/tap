@@ -28,7 +28,7 @@ import net.minecraft.network.protocol.game.ClientboundAddEntityPacket
 import net.minecraft.network.protocol.game.ClientboundAddMobPacket
 import net.minecraft.network.protocol.game.ClientboundEntityEventPacket
 import net.minecraft.network.protocol.game.ClientboundMoveEntityPacket
-import net.minecraft.network.protocol.game.ClientboundRemoveEntityPacket
+import net.minecraft.network.protocol.game.ClientboundRemoveEntitiesPacket
 import net.minecraft.network.protocol.game.ClientboundSetEntityDataPacket
 import net.minecraft.network.protocol.game.ClientboundSetEquipmentPacket
 import net.minecraft.network.protocol.game.ClientboundSetPassengersPacket
@@ -222,7 +222,7 @@ class NMSPacketSupport : PacketSupport {
     override fun entityDestroy(
         entityId: Int
     ): NMSPacketContainer {
-        val packet = ClientboundRemoveEntityPacket(entityId)
+        val packet = ClientboundRemoveEntitiesPacket(entityId)
         return NMSPacketContainer(packet)
     }
 
